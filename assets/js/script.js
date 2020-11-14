@@ -34,14 +34,14 @@ get.addEventListener("click", function () {
 // Start function to generate password
 function generatePassword() {
     // Asks for user input
-    enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
+    enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 100"));
     // First if statement for user validation 
     if (!enter) {
         alert("This needs a value");
-    } else if (enter < 8 || enter > 128) {
+    } else if (enter < 8 || enter > 100) {
         // Validates user input
         // Start user input prompts
-        enter = parseInt(prompt("You must choose between 8 and 128"));
+        enter = parseInt(prompt("You must choose between 8 and 100"));
 
     } else {
         // Continues once user input is validated
@@ -129,17 +129,4 @@ function generatePassword() {
 function UserInput(ps) {
     document.getElementById("password").textContent = ps;
 
-}
-
-var copy = document.querySelector("#copy");
-copy.addEventListener("click", function () {
-    copyPassword();
-});
-// This copies the password value - works
-// Code example demonstrated in a youtube video: 
-// Source: https://youtu.be/9sT03jEwcaw
-function copyPassword() {
-    document.getElementById("password").select();
-    document.execCommand("Copy");
-    alert("Password copied to clipboard!");
 }
